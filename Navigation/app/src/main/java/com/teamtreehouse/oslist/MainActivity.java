@@ -1,5 +1,6 @@
 package com.teamtreehouse.oslist;
 
+import android.app.Fragment;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -13,6 +14,8 @@ import android.widget.Toast;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v4.widget.DrawerLayout;
 import android.content.res.Configuration;
+import android.app.FragmentManager;
+import android.app.FragmentTransaction;
 
 
 public class MainActivity extends ActionBarActivity {
@@ -22,6 +25,8 @@ public class MainActivity extends ActionBarActivity {
     private ActionBarDrawerToggle mDrawerToggle;
     private DrawerLayout mDrawerLayout;
     private String mActivityTitle;
+    private int selectedPosition;
+    private String[] drawerArray= { "Home", "Recipe List", "Recipes", "OS X", "Linux" };
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,21 +37,27 @@ public class MainActivity extends ActionBarActivity {
         mDrawerList = (ListView)findViewById(R.id.navList);
         mDrawerLayout = (DrawerLayout)findViewById(R.id.drawer_layout);
 
-        //???
+        //returns the title of this activity as a string
         mActivityTitle = getTitle().toString();
 
         //Drawer Items
         addDrawerItems();
 
-        //Listner
+        //Listener
         mDrawerList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Toast.makeText(MainActivity.this, "Time for an upgrade!", Toast.LENGTH_SHORT).show();
+                //Toast.makeText(MainActivity.this, "Time for an upgrade!", Toast.LENGTH_SHORT).show();
+                selectedPosition = position;
+
+                //Replace fragment content
+                updateFragment();
+                mDrawerLayout.closeDrawer(mDrawerList);
+
             }
         });
 
-        //???
+        //Customizes action bar to show up icon
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setHomeButtonEnabled(true);
 
@@ -57,7 +68,7 @@ public class MainActivity extends ActionBarActivity {
     //*** Helper method *** //
     //Items in Drawer
     private void addDrawerItems() {
-        String[] osArray = { "Android", "iOS", "Windows", "OS X", "Linux" };
+        String[] osArray = { "Home", "Recipe List", "Recipes", "OS X", "Linux" };
         mAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, osArray);
         mDrawerList.setAdapter(mAdapter);
     }
@@ -71,14 +82,14 @@ public class MainActivity extends ActionBarActivity {
             /** Called when a drawer has settled in a completely open state. */
             public void onDrawerOpened(View drawerView) {
                 super.onDrawerOpened(drawerView);
-                getSupportActionBar().setTitle("Navigation!");
+                getSupportActionBar().setTitle("Menu");
                 invalidateOptionsMenu(); // creates call to onPrepareOptionsMenu()
             }
 
             /** Called when a drawer has settled in a completely closed state. */
             public void onDrawerClosed(View view) {
                 super.onDrawerClosed(view);
-                getSupportActionBar().setTitle(mActivityTitle);
+                //getSupportActionBar().setTitle(mActivityTitle);
                 invalidateOptionsMenu(); // creates call to onPrepareOptionsMenu()
             }
         };
@@ -86,6 +97,69 @@ public class MainActivity extends ActionBarActivity {
         mDrawerToggle.setDrawerIndicatorEnabled(true);
         mDrawerLayout.setDrawerListener(mDrawerToggle);
     }
+
+    //Update the Fragment
+    public void updateFragment() {
+        Fragment objFragment= null;
+
+        //Choosing Fragment
+        switch (selectedPosition){
+
+            case 0:
+                getSupportActionBar().setTitle("Home");
+                objFragment=new Home();
+                FragmentManager fragmentManagerOne = getFragmentManager();
+                FragmentTransaction ftOne = fragmentManagerOne.beginTransaction();
+                ftOne.replace(R.id.mainlayout, objFragment);
+                ftOne.commit();
+                break;
+
+            case 1:
+                getSupportActionBar().setTitle("Recipe List");
+                objFragment=new RecipeList();
+                FragmentManager fragmentManagerTwo = getFragmentManager();
+                FragmentTransaction ftTwo = fragmentManagerTwo.beginTransaction();
+                ftTwo.replace(R.id.mainlayout, objFragment);
+                ftTwo.commit();
+                break;
+
+            case 2:
+                getSupportActionBar().setTitle("Recipe");
+                objFragment=new Recipes();
+                FragmentManager fragmentManagerThree = getFragmentManager();
+                FragmentTransaction ftThree = fragmentManagerThree.beginTransaction();
+                ftThree.replace(R.id.mainlayout, objFragment);
+                ftThree.commit();
+                break;
+
+            case 3:
+                Toast.makeText(MainActivity.this, "Empty !!!", Toast.LENGTH_SHORT).show();
+                break;
+
+            case 4:
+                Toast.makeText(MainActivity.this, "Empty !!!", Toast.LENGTH_SHORT).show();
+                break;
+        }
+
+        /*FragmentManager fragmentManager = getFragmentManager();
+        FragmentTransaction ft = fragmentManager.beginTransaction();
+        ft.replace(R.id.mainlayout, objFragment);
+        ft.commit();*/
+
+        //WebViewFragment rFragment = new WebViewFragment();
+
+        // Passing selected item information to fragment
+        //Bundle data = new Bundle();
+        //data.putString("title", drawerArray[selectedPosition]);
+        /*data.putString("url", getUrl());
+        rFragment.setArguments(data);*/
+
+        //Replace fragment
+       /* FragmentTransaction ft = fragmentManager.beginTransaction();
+        ft.replace(R.id.content_frame, rFragment);
+        ft.commit();*/
+    }
+
 
 
 
@@ -108,7 +182,7 @@ public class MainActivity extends ActionBarActivity {
             return true;
         }
 
-        //???
+        //handle opening and closing the drawer depending on if it is open or not
         if (mDrawerToggle.onOptionsItemSelected(item)) {
             return true;
         }
