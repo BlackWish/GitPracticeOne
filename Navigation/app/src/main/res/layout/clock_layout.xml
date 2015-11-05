@@ -1,0 +1,113 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin" tools:context=".MainActivity"
+    android:background="#ffff"
+    android:id="@+id/Timer"
+    >
+
+    <LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:orientation="vertical"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" >
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="@string/time_text"
+        android:id="@+id/timeText"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="134dp" />
+
+    <Button
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:text="@string/startButtonString"
+        android:id="@+id/buttonOne"
+        android:layout_centerVertical="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginLeft="36dp"
+        android:layout_marginStart="36dp"
+        android:background="@drawable/start"/>
+
+    <Button
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:text="@string/resetButtonString"
+        android:id="@+id/buttonTwo"
+        android:layout_alignBottom="@+id/buttonOne"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginRight="47dp"
+        android:layout_marginEnd="47dp"
+        android:background="@drawable/reset"/>
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/mintext"
+        android:maxLength="2"
+        android:hint="Mn"
+        android:layout_alignBottom="@+id/timeText"
+        android:layout_centerHorizontal="true" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/hrtext"
+        android:maxLength="2"
+        android:hint="Hr"
+        android:layout_alignTop="@+id/mintext"
+        android:layout_toLeftOf="@+id/timeText"
+        android:layout_toStartOf="@+id/timeText" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/sectext"
+        android:maxLength="2"
+        android:hint="Sc"
+        android:layout_alignTop="@+id/mintext"
+        android:layout_toRightOf="@+id/timeText"
+        android:layout_toEndOf="@+id/timeText" />
+
+    <Button
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:text="@string/pauseButtonString"
+        android:id="@+id/buttonPause"
+        android:layout_centerVertical="true"
+        android:layout_alignLeft="@+id/buttonOne"
+        android:layout_alignStart="@+id/buttonOne"
+        android:background="@drawable/pause"/>
+
+    <Button
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:text="@string/resumeButtonString"
+        android:id="@+id/buttonResume"
+        android:layout_centerVertical="true"
+        android:layout_alignLeft="@+id/buttonOne"
+        android:layout_alignStart="@+id/buttonOne"
+        android:background="@drawable/resume"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/stopRing"
+        android:background="@drawable/bell"
+        android:layout_alignTop="@+id/mintext"
+        android:layout_centerHorizontal="true"
+        android:layout_gravity="center_horizontal" />
+
+</RelativeLayout>

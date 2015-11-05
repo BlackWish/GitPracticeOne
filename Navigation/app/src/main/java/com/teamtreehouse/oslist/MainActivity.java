@@ -26,7 +26,9 @@ public class MainActivity extends ActionBarActivity {
     private DrawerLayout mDrawerLayout;
     private String mActivityTitle;
     private int selectedPosition;
-    private String[] drawerArray= { "Home", "Recipe List", "Recipes", "OS X", "Linux" };
+    private String[] drawerArray= { "Home", "Recipe List", "Recipes", "Timer", "Linux" };
+    private boolean objectControl=false;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -67,15 +69,15 @@ public class MainActivity extends ActionBarActivity {
 
     //*** Helper method *** //
     //Items in Drawer
-    private void addDrawerItems() {
-        String[] osArray = { "Home", "Recipe List", "Recipes", "OS X", "Linux" };
+    public void addDrawerItems() {
+        String[] osArray = { "Home", "Recipe List", "Recipes", "Timer", "Linux" };
         mAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, osArray);
         mDrawerList.setAdapter(mAdapter);
     }
 
 
     //Setup drawer
-    private void setupDrawer() {
+    public void setupDrawer() {
         mDrawerToggle = new ActionBarDrawerToggle(this, mDrawerLayout,
                 R.string.drawer_open, R.string.drawer_close) {
 
@@ -100,44 +102,58 @@ public class MainActivity extends ActionBarActivity {
 
     //Update the Fragment
     public void updateFragment() {
-        Fragment objFragment= null;
+        //Fragment objFragment= null;
 
         //Choosing Fragment
         switch (selectedPosition){
 
             case 0:
+                Fragment objFragmentOne= null;
                 getSupportActionBar().setTitle("Home");
-                objFragment=new Home();
+                objFragmentOne=new Home();
                 FragmentManager fragmentManagerOne = getFragmentManager();
                 FragmentTransaction ftOne = fragmentManagerOne.beginTransaction();
-                ftOne.replace(R.id.mainlayout, objFragment);
+                ftOne.replace(R.id.mainlayout, objFragmentOne);
                 ftOne.commit();
                 break;
 
             case 1:
+                Fragment objFragmentTwo= null;
                 getSupportActionBar().setTitle("Recipe List");
-                objFragment=new RecipeList();
+                objFragmentTwo=new RecipeList();
                 FragmentManager fragmentManagerTwo = getFragmentManager();
                 FragmentTransaction ftTwo = fragmentManagerTwo.beginTransaction();
-                ftTwo.replace(R.id.mainlayout, objFragment);
+                ftTwo.replace(R.id.mainlayout, objFragmentTwo);
                 ftTwo.commit();
                 break;
 
             case 2:
+                Fragment objFragmentThree= null;
                 getSupportActionBar().setTitle("Recipe");
-                objFragment=new Recipes();
+                objFragmentThree=new Recipes();
                 FragmentManager fragmentManagerThree = getFragmentManager();
                 FragmentTransaction ftThree = fragmentManagerThree.beginTransaction();
-                ftThree.replace(R.id.mainlayout, objFragment);
+                ftThree.replace(R.id.mainlayout, objFragmentThree);
                 ftThree.commit();
                 break;
 
             case 3:
-                Toast.makeText(MainActivity.this, "Empty !!!", Toast.LENGTH_SHORT).show();
+                objectControl=true;
+                Fragment objFragmentFour= null;
+                getSupportActionBar().setTitle("Timer");
+                objFragmentFour=new Timer();
+                FragmentManager fragmentManagerFour = getFragmentManager();
+                FragmentTransaction ftFour = fragmentManagerFour.beginTransaction();
+                ftFour.replace(R.id.mainlayout, objFragmentFour);
+                ftFour.commit();
                 break;
 
             case 4:
-                Toast.makeText(MainActivity.this, "Empty !!!", Toast.LENGTH_SHORT).show();
+                if(objectControl){
+                    Toast.makeText(MainActivity.this, "Timer is running behind", Toast.LENGTH_SHORT).show();
+                }else if (!objectControl){
+                    Toast.makeText(MainActivity.this, "Timer is not running behind", Toast.LENGTH_SHORT).show();
+                }
                 break;
         }
 

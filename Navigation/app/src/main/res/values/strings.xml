@@ -7,5 +7,22 @@
     <string name="drawer_open">Open navigation drawer</string>
     <string name="drawer_close">Close navigation drawer</string>
     <string name="menuonestring">Menu One</string>
+    <string name="time_text">time_text</string>
+    <string name="button_begin">button_begin</string>
+    <string name="resetString">resetString</string>
+    <string name="minuteString">minuteString</string>
+    <string name="hourString">hourString</string>
+    <string name="secondString">secondString</string>
+    <string name="stringPause">stringPause</string>
+    <string name="stringResume">stringResume</string>
+    <string name="startButtonString">Start</string>
+    <string name="resetButtonString">Reset</string>
+    <string name="minETextString">Mn</string>
+    <string name="hrETextString">Hr</string>
+    <string name="scETextString">Sc</string>
+    <string name="pauseButtonString">Pause</string>
+    <string name="resumeButtonString">Resume</string>
+    <string name="goTimerString">Timer</string>
+    <string name="arrowString"><![CDATA[>]]></string>
 
 </resources>

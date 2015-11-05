@@ -2,32 +2,32 @@
 <items version="2" >
 
     <item
-        jar="/Users/myatminmaung/Desktop/Tiffany/t3/Navigation/app/build/intermediates/exploded-aar/com.android.support/support-v4/21.0.3/jars/libs/internal_impl-21.0.3.jar"
+        jar="/Users/myatminmaung/Desktop/portal/t3/Navigation/app/build/intermediates/exploded-aar/com.android.support/support-v4/21.0.3/jars/libs/internal_impl-21.0.3.jar"
         jumboMode="false"
         revision="21.1.2"
         sha1="01ec05bfbafcc07646ba813000bf2ef11742dd03">
-        <dex dex="/Users/myatminmaung/Desktop/Tiffany/t3/Navigation/app/build/intermediates/pre-dexed/debug/internal_impl-21.0.3-a3a48266f41f4dd7786852898540d3ffadd43b87.jar" />
+        <dex dex="/Users/myatminmaung/Desktop/portal/t3/Navigation/app/build/intermediates/pre-dexed/debug/internal_impl-21.0.3-144f63b8173a46e812e98ba9d834b67f1829b3e0.jar" />
     </item>
     <item
-        jar="/Users/myatminmaung/Desktop/Tiffany/t3/Navigation/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/jars/classes.jar"
+        jar="/Users/myatminmaung/Desktop/portal/t3/Navigation/app/build/intermediates/exploded-aar/com.android.support/support-v4/21.0.3/jars/classes.jar"
         jumboMode="false"
         revision="21.1.2"
-        sha1="81d42bf983a8741f4888a6e333e454e4a5e0eeb7">
-        <dex dex="/Users/myatminmaung/Desktop/Tiffany/t3/Navigation/app/build/intermediates/pre-dexed/debug/classes-8680a0b1b028040b00d774a7030ef9d0d7d0713e.jar" />
+        sha1="2c91c949a45a21cdecf26e03951e46c7beec9ad8">
+        <dex dex="/Users/myatminmaung/Desktop/portal/t3/Navigation/app/build/intermediates/pre-dexed/debug/classes-306d907603d67f07b49bf60c2d293c8a69067991.jar" />
     </item>
     <item
         jar="/Users/myatminmaung/Library/Android/sdk/extras/android/m2repository/com/android/support/support-annotations/21.0.3/support-annotations-21.0.3.jar"
         jumboMode="false"
         revision="21.1.2"
         sha1="4b74cefe1f0c1b819e7260c8627a14674e37fd35">
-        <dex dex="/Users/myatminmaung/Desktop/Tiffany/t3/Navigation/app/build/intermediates/pre-dexed/debug/support-annotations-21.0.3-771b01562f56ad96fe1e6fcedadee18cc3e046e9.jar" />
+        <dex dex="/Users/myatminmaung/Desktop/portal/t3/Navigation/app/build/intermediates/pre-dexed/debug/support-annotations-21.0.3-771b01562f56ad96fe1e6fcedadee18cc3e046e9.jar" />
     </item>
     <item
-        jar="/Users/myatminmaung/Desktop/Tiffany/t3/Navigation/app/build/intermediates/exploded-aar/com.android.support/support-v4/21.0.3/jars/classes.jar"
+        jar="/Users/myatminmaung/Desktop/portal/t3/Navigation/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/jars/classes.jar"
         jumboMode="false"
         revision="21.1.2"
-        sha1="2c91c949a45a21cdecf26e03951e46c7beec9ad8">
-        <dex dex="/Users/myatminmaung/Desktop/Tiffany/t3/Navigation/app/build/intermediates/pre-dexed/debug/classes-ef307777b9d9f66562ea02e07abf13a9841be021.jar" />
+        sha1="81d42bf983a8741f4888a6e333e454e4a5e0eeb7">
+        <dex dex="/Users/myatminmaung/Desktop/portal/t3/Navigation/app/build/intermediates/pre-dexed/debug/classes-5cafdff84a556c91fdf99fcdbc400be730d2f2e7.jar" />
     </item>
 
 </items>

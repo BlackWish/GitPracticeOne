@@ -11,4 +11,13 @@
         android:layout_centerVertical="true"
         android:layout_centerHorizontal="true" />
 
+    <Button
+        android:layout_width="400dp"
+        android:layout_height="50dp"
+        android:text="@string/goTimerString"
+        android:id="@+id/goTimer"
+        android:background="#ffaa"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true" />
+
 </RelativeLayout>
